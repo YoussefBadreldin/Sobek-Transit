@@ -1,0 +1,85 @@
+  
+   table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Style the driver's photo */
+  .driver img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 50%;
+  }
+  
+  /* Style the driver's name */
+  .driver h3 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  /* Style the driver's rating */
+  .driver .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Style the stars in the rating */
+  .driver .rating span {
+    color: #FFD700;
+    margin: 0 2px;
+  }
+
+  /* Style the rating number */
+  .driver .rating .rating-number {
+    margin-left: 5px;
+  }
+  
+  /* Style the button to show driver info */
+  .show-info-btn {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .show-info-btn:hover {
+    background-color: #005ea3;
+  }
+  
+  /* Style the driver's info section */
+  .driver-info {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .driver-info h4 {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
