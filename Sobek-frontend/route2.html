@@ -1,5 +1,5 @@
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoUGO3G-IFqcPfIJ9DxjB2uPVnKgeg-10&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoUGO3G-IFqcPfIJ9DxjB2uPVnKgeg-10&callback=initMap" async defer></script>
 
 
 </head>
@@ -14,12 +14,11 @@
   });
 
   var locations = [
-    { name: "Shaarawy", lat: 31.246010122515237, lng: 29.97428103231592},           
-
-    { name: "Zezenia", lat: 31.240774235720423, lng: 29.966225859271766 },
-    { name: "Gleem", lat: 31.238551075902095, lng: 29.96268714419768 },
-    { name: "Bolkly", lat: 31.231320287120393, lng: 29.95526383892848 },
-    { name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
+  { name: "Roushdy", lat: 31.22793103506819, lng: 29.95176114876179},          
+// { name: "Sedi Gaber", lat: 31.221558760235006, lng: 29.966225859271766 },
+{ name: "Sporting", lat: 31.21235666850399, lng: 29.93411308700536 },  
+{ name: "Ibrahimia", lat: 31.208225508358357, lng: 29.929442942494376 },
+{ name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
   ];
 
   var latLngArray = locations.map(function(location) {
@@ -106,53 +105,6 @@ var request = {
 
 // ----------------------------------------------------------------------------------------------------//
 
-var route2Locations = [
-    { name: "Roushdy", lat: 31.228745892996518, lng: 29.95129628296765},           
-
-    { name: "Sedi Gaber", lat: 31.221558760235006, lng: 29.966225859271766 },
-    { name: "Ibrahimia", lat: 31.208225508358357, lng: 29.929442942494376 },
-    { name: "bab shar2 ", lat: 31.205905827020125, lng: 29.924735254385443 },
-    { name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
-  ];
-
-
-
-  var latLngArray2 = route2Locations.map(function(location) {
-  return new google.maps.LatLng(location.lat, location.lng);
-});
-
-var waypoints2 = route2Locations.slice(1, route2Locations.length - 1).map(function(location) {
-  return { location: { lat: location.lat, lng: location.lng } };
-});
-
-var request2 = {
-  origin: latLngArray2[0],
-  destination: latLngArray2[latLngArray2.length - 1],
-  waypoints: waypoints2,
-  optimizeWaypoints: true,
-  travelMode: google.maps.TravelMode.DRIVING
-};
-
-directionsService.route(request2, function(response, status) {
-  if (status === google.maps.DirectionsStatus.OK) {
-    var directionsRenderer2 = new google.maps.DirectionsRenderer({
-      map: map,
-      suppressMarkers: true
-      
-    });
-    directionsRenderer2.setDirections(response);
-  } else {
-    console.error('Directions request failed due to ' + status);
-  }
-});
-
-route2Locations.forEach(function(location) {
-  var marker = new google.maps.Marker({
-    position: { lat: location.lat, lng: location.lng },
-    map: map,
-    title: location.name
-  });
-});
 
 
 
