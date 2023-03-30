@@ -1,19 +1,44 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Home Page</title>
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoUGO3G-IFqcPfIJ9DxjB2uPVnKgeg-10&callback=initMap" async defer></script>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+  </head>
 
+  <body>
+    <!-- Page title -->
+    <h1>Sobek Transit</h1>
 
-</head>
-<body>
+    <!-- Navigation bar -->
+    <nav>
+      <a href="homepage.html">Home</a>
+      <a href="noOfSeats.html">Seat information</a>
+      <div class="dropdown">
+        <button class="dropbtn">Buses
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Show Bus 1 route</a>
+          <a href="#">Show Bus 2 route</a>
+        </div>
+      </div> 
+    </nav>
+
+    <!-- Map container -->
     <div id="map" style="width: 100%; height: 600px;"></div>
-  
-    <script>
- function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 30.8201, lng: 28.9526},
-    zoom: 10
-  });
 
-  var locations = [
+    <!-- JavaScript code -->
+    <script> 
+      // Define a function to initialize the map
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 30.8201, lng: 28.9526},
+          zoom: 10
+        });
+
+        var locations = [
     { name: "Shaarawy", lat: 31.246010122515237, lng: 29.97428103231592},           
 
     { name: "Zezenia", lat: 31.240774235720423, lng: 29.966225859271766 },
@@ -49,7 +74,12 @@ var request = {
 
       var directionsRenderer = new google.maps.DirectionsRenderer({
         map: map,
-        suppressMarkers: true
+        suppressMarkers: true,
+        polylineOptions: {
+    strokeColor: '#FF0000', // change this value to the color you want
+    strokeOpacity: 1.0,
+    strokeWeight: 3
+  }
       });
       directionsRenderer.setDirections(response);
 
@@ -107,12 +137,11 @@ var request = {
 
 
 var route2Locations = [
-    { name: "Roushdy", lat: 31.228745892996518, lng: 29.95129628296765},           
-
-    { name: "Sedi Gaber", lat: 31.221558760235006, lng: 29.966225859271766 },
-    { name: "Ibrahimia", lat: 31.208225508358357, lng: 29.929442942494376 },
-    { name: "bab shar2 ", lat: 31.205905827020125, lng: 29.924735254385443 },
-    { name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
+{ name: "Roushdy", lat: 31.22793103506819, lng: 29.95176114876179},          
+// { name: "Sedi Gaber", lat: 31.221558760235006, lng: 29.966225859271766 },
+{ name: "Sporting", lat: 31.21235666850399, lng: 29.93411308700536 },  
+{ name: "Ibrahimia", lat: 31.208225508358357, lng: 29.929442942494376 },
+{ name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
   ];
 
 
@@ -153,19 +182,9 @@ route2Locations.forEach(function(location) {
     title: location.name
   });
 });
-
-
-
-
-
-  
-}
-
- 
-initMap();
-
+    
+        
+      }
     </script>
   </body>
-  
-
-    </script>
+</html>
